@@ -1,0 +1,14 @@
+xlrd 설치
+timetable.xls 파일을 바탕화면에 위치
+
+사용 데이터베이스 : Mongodb
+데이터베이스 이름 test
+
+강의 검색,추가 => 테이블명 : courselist
+http://127.0.0.1:5000/searchTable/<int:num> 
+<int 부분은 0,1,2,3,4...>
+
+좌측 버튼으로 시간표에 추가가능
+
+시간표 => 테이블명 : timetable
+http://127.0.0.1:5000/timeTable

@@ -1,0 +1,53 @@
+﻿import re
+
+string="수2-3(10:00-11:50)(C25-222) 화2-3(12:00-13:50)(C25-222)"
+
+if len(string)<30:
+    p=re.compile(r"(\w)")
+    m=p.search(string)
+    print(m.group(0))
+    p = re.compile("(?=[(]).+")
+    m=p.search(string)
+    p=re.compile(r"[(]+(\d+)+[:]+(\d+)+[-]+(\d+)+[:]+(\d+)")
+    m=p.search(string)
+    print(m.group(1)+':'+m.group(2)+'~'+m.group(3)+':'+m.group(4))
+
+elif len(string)>30 and len(string)<60:
+    p=re.compile(r"(\w)")
+    m=p.search(string)
+    print(m.group(0))
+    p = re.compile("(?=[(]).+")
+    m=p.search(string)
+    p=re.compile(r"[(]+(\d+)+[:]+(\d+)+[-]+(\d+)+[:]+(\d+)")
+    m=p.search(string)
+    print(m.group(1)+':'+m.group(2)+'~'+m.group(3)+':'+m.group(4))
+    p=re.compile(r"\s+(\w)")
+    m=p.search(string)
+    print(m.group(0))    
+    p=re.compile(r"(\w)+((?=[(]).+)+[(]+(\d+)+[:]+(\d+)+[-]+(\d+)+[:]+(\d+)")
+    m=p.search(string)
+    print(m.group(3)+':'+m.group(4)+'~'+m.group(5)+':'+m.group(6))
+    
+elif len(string)>60 and len(string)<90:
+    p=re.compile(r"(\w)")
+    m=p.search(string)
+    print(m.group(0))
+    p = re.compile("(?=[(]).+")
+    m=p.search(string)
+    p=re.compile(r"[(]+(\d+)+[:]+(\d+)+[-]+(\d+)+[:]+(\d+)")
+    m=p.search(string)
+    print(m.group(1)+':'+m.group(2)+'~'+m.group(3)+':'+m.group(4))
+    p=re.compile(r"\s+(\w)")
+    m=p.search(string)
+    print(m.group(0))    
+    p=re.compile(r"(\w)+((?=[(]).+)+[(]+(\d+)+[:]+(\d+)+[-]+(\d+)+[:]+(\d+)")
+    m=p.search(string)
+    print(m.group(3)+':'+m.group(4)+'~'+m.group(5)+':'+m.group(6))
+    p=re.compile(r"\s+(\w)")
+    m=p.search(string)
+    print(m.group(0))    
+    p=re.compile(r"(\w)+((?=[(]).+)+[(]+(\d+)+[:]+(\d+)+[-]+(\d+)+[:]+(\d+)")
+    m=p.search(string)
+    print(m.group(3)+':'+m.group(4)+'~'+m.group(5)+':'+m.group(6))
+
+    

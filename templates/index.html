@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block body %}
+  <div class="container">
+    <div class="page-header">
+      <h1>메인</h1>
+    </div>
+    {% if 'user' in session %}
+    <p class="lead">안녕하세요, {{ session.user.name }}.  <a href="{{url_for('timeTable')}}">시간표</a>  <a href="{{url_for('searchTable', num='0')}}">수업시간표</a>  
+      <a href="{{ url_for('logout') }}">로그아웃</a></p>
+    {% else %}
+      <a href="{{ url_for('login') }}">로그인</a> <a href="{{url_for('timeTable')}}">시간표</a> <a href="{{url_for('searchTable', num='0')}}">수업시간표</a>
+    {% endif %}
+  </div>
+{% endblock %}
+
